@@ -7,10 +7,10 @@ import { TemaModule } from './tema/tema.module';
 
 
 @Module({
-  imports: [
-    TypeOrmModule.forRoot({
-    type: 'mysql',
-    host: 'localhost',
+  imports: [          
+    TypeOrmModule.forRoot({                 // modulo do type ORM 
+    type: 'mysql',                          // tipo do banco de dados a ser utilizado
+    host: 'localhost',                      // informações do banco de dados
     port: 3306,
     username: 'root',
     password: 'root',
