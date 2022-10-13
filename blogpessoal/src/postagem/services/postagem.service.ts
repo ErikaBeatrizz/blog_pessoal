@@ -16,7 +16,7 @@ export class PostagemService {
 
     ) {}
 
-    async findAll (): Promise<Postagem[]> {
+    async findAll (): Promise<Postagem[]> {                 
         return await this.postagemRepository.find({
             relations: {
                 tema: true
