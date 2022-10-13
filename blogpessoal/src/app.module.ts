@@ -15,7 +15,7 @@ import { TemaModule } from './tema/tema.module';
     username: 'root',
     password: 'root',
     database: 'db_blogpessoal',
-    entities: [Postagem, Tema],
+    entities: [Postagem, Tema],       // chama as tabalas principais criadas nas outras pastas
     synchronize: true,
 
     }),
