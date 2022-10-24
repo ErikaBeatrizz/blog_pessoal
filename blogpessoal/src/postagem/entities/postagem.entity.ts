@@ -1,5 +1,6 @@
 import { IsNotEmpty } from "class-validator";
 import { Tema } from "src/tema/entities/tema.entity";
+import { Usuario } from "src/usuario/entities/usuario.entity";
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity({name: 'tb_postagens'})     // decorator que chama a tabela principal
@@ -24,4 +25,9 @@ export class Postagem {                // exportando o estilo / classe
        onDelete: "CASCADE" 
     })
     tema:  Tema;
+
+    @ManyToOne(() => Usuario, (usuario) => usuario.postagem, {
+        onDelete: "CASCADE"
+    })
+    usuario: Usuario;
 }

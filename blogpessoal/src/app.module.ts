@@ -5,6 +5,8 @@ import { Postagem } from './postagem/entities/postagem.entity';
 import { PostagemModule } from './postagem/postagem.module';
 import { Tema } from './tema/entities/tema.entity';
 import { TemaModule } from './tema/tema.module';
+import { Usuario } from './usuario/entities/usuario.entity';
+import { UsuarioModule } from './usuario/usuario.module';
 
 
 @Module({
@@ -16,13 +18,14 @@ import { TemaModule } from './tema/tema.module';
     username: 'root',
     password: 'root',
     database: 'db_blogpessoal',
-    entities: [Postagem, Tema],       // chama as tabalas principais criadas nas outras pastas
+    entities: [Postagem, Tema, Usuario],   // chama as tabelas principais criadas nas outras pastas
     synchronize: true,
 
     }),
     PostagemModule,
     TemaModule,
-    AuthModule
+    AuthModule,
+    UsuarioModule
 
   ],
   controllers: [],
