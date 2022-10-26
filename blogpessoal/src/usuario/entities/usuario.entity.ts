@@ -1,5 +1,5 @@
 import { IsEmail, isNotEmpty, IsNotEmpty, MinLength } from "class-validator";
-import { Postagem } from "src/postagem/entities/postagem.entity";
+import { Postagem } from "../../postagem/entities/postagem.entity"
 import { Column, Entity, OneToMany, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 
 
