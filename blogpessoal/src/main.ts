@@ -20,6 +20,6 @@ async function bootstrap() {
 
   app.useGlobalPipes (new ValidationPipe());   // validações 
   app.enableCors();                           // habilitar que recebe requisição de qualquer lugar
-  await app.listen(4000);                     // porta de acesso 4000 (porta do back end) 
+  await app.listen(process.env.PORT || 4000);   // porta de acesso 4000 (porta do back end) 
 }
 bootstrap();

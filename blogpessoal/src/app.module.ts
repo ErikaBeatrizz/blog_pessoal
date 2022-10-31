@@ -12,7 +12,7 @@ import { UsuarioModule } from './usuario/usuario.module';
 
 @Module({
   imports: [          
-    TypeOrmModule.forRoot({                 // modulo do type ORM 
+/*     TypeOrmModule.forRoot({                 // modulo do type ORM 
     type: 'mysql',                          // tipo do banco de dados a ser utilizado
     host: 'localhost',                      // informações do banco de dados
     port: 3306,
@@ -22,7 +22,21 @@ import { UsuarioModule } from './usuario/usuario.module';
     entities: [Postagem, Tema, Usuario],   // chama as tabelas principais criadas nas outras pastas
     synchronize: true,
 
+    }), */
+
+    TypeOrmModule.forRoot({
+      type: 'postgres',
+      url: process.env.DATABASE_URL, 
+      logging: false,              // desabilitar logs do banco
+      dropSchema: false,            // não deletar o banco
+      ssl: {
+        rejectUnauthorized: false    // nao exige certificado ssl (certificado de segurança)
+      },
+      synchronize: true,
+      autoLoadEntities: true
+      
     }),
+
     PostagemModule,
     TemaModule,
     AuthModule,
